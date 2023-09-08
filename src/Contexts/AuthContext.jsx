@@ -19,8 +19,8 @@ const AuthProvider = ({ children }) => {
     const logout = () => {
         localStorage.clear()
         setAuth(false)
+        navigate('/test_Selecu_frontEnd/')
         window.location.reload()
-        navigate('/test_Selecu_frontEnd')
     }
 
     const authenticate = async (userData) => {
@@ -73,7 +73,7 @@ const AuthProvider = ({ children }) => {
         } else {
             localStorage.clear()
             setAuth(false)
-            navigate('/test_Selecu_frontEnd')
+            navigate('/test_Selecu_frontEnd/')
         }
     }, [auth, login, navigate, tokenExist]);
 
