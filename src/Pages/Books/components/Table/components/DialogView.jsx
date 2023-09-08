@@ -143,8 +143,8 @@ const DialogView = () => {
                 </Box>
             </DialogContent>
             <DialogActions>
-                <Button onClick={handleClose}>Cancel</Button>
-                {edit && <Button onClick={() => updateBook(editedData.id, editedData)}>Editar</Button>}
+                <Button color='error' variant='contained' onClick={handleClose}>Cancel</Button>
+                {edit && <Button color='success' variant='contained' onClick={() => updateBook(editedData.id, editedData)}>Editar</Button>}
             </DialogActions>
         </Dialog>
     )

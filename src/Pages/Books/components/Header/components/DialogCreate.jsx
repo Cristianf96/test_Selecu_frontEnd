@@ -152,8 +152,8 @@ const DialogCreate = () => {
                 </Box>
             </DialogContent>
             <DialogActions>
-                <Button onClick={handleClose}>Cancel</Button>
-                <Button onClick={handleCreate}>Crear</Button>
+                <Button color='error' variant='contained' onClick={handleClose}>Cancel</Button>
+                <Button color='success' variant='contained' onClick={handleCreate}>Crear</Button>
             </DialogActions>
         </Dialog>
     )
