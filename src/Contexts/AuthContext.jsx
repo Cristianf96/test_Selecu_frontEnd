@@ -18,7 +18,8 @@ const AuthProvider = ({ children }) => {
 
     const logout = () => {
         localStorage.clear()
-        navigate('/test_selecu_frontSelecu')
+        setAuth(false)
+        window.location.reload()
     }
 
     const authenticate = async (userData) => {
@@ -48,7 +49,6 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
 
-
         if (login) {
             authenticate(login);
         }
@@ -56,20 +56,25 @@ const AuthProvider = ({ children }) => {
             const decoded = jwt_decode(tokenExist);
             if (decoded) {
                 const { expiresAt } = decoded
-                const isValid = expiresAt > moment().format('YYYY-MM-DD HH:mm')
+                const myDate = moment().add('5', 'h').format('YYYY-MM-DD HH:mm')
+                const isValid = expiresAt > myDate
                 if (!isValid) {
                     localStorage.clear()
-                    setAuth(true)
-                    navigate('/test_selecu_frontSelecu')
+                    setAuth(false)
+                    window.location.reload()
                 } else {
-                    navigate('/test_selecu_frontSelecu/Home')
+                    if (!auth) {
+                        navigate('/test_selecu_frontSelecu/Home')
+                    }
+                    setAuth(true)
                 }
             }
         } else {
             localStorage.clear()
+            setAuth(false)
             navigate('/test_selecu_frontSelecu')
         }
-    }, [login, navigate, tokenExist]);
+    }, [auth, login, navigate, tokenExist]);
 
     return (
         <AuthContext.Provider value={{

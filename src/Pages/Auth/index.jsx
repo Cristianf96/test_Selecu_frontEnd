@@ -7,7 +7,7 @@ import FormLogin from './components/Form';
 
 const AuthLogin = () => {
 
-    const { setLogin, loading, setLoading } = useContext(AuthContext)
+    const { auth, setLogin, loading, setLoading } = useContext(AuthContext)
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -34,7 +34,7 @@ const AuthLogin = () => {
         });
     }
 
-    return (
+    return !auth && (
         <Box
             sx={{
                 width: '250px',
