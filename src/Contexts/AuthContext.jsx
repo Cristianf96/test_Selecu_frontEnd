@@ -20,6 +20,7 @@ const AuthProvider = ({ children }) => {
         localStorage.clear()
         setAuth(false)
         window.location.reload()
+        navigate('/test_Selecu_frontEnd')
     }
 
     const authenticate = async (userData) => {
