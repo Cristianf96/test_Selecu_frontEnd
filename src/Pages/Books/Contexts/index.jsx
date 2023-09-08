@@ -44,6 +44,8 @@ const BooksProvider = ({ children }) => {
 
     const filterSearch = (term) => {
 
+        if (!term || term === '') return setDataBooksSearch(dataBooks)
+
         const filteredBooks = dataBooks.filter(book =>
             book.title.toLowerCase().includes(term) ||
             book.author.toLowerCase().includes(term) ||
