@@ -10,9 +10,9 @@ function App() {
       <BrowserRouter>
         <AuthProvider>
           <Routes>
-            <Route path="/test_selecu_frontSelecu" element={authLogin} />
-            <Route path="/test_selecu_frontSelecu/Home" element={home} />
-            <Route path="/test_selecu_frontSelecu/Books" element={books} />
+            <Route path="/test_Selecu_frontEnd" element={authLogin} />
+            <Route path="/test_Selecu_frontEnd/Home" element={home} />
+            <Route path="/test_Selecu_frontEnd/Books" element={books} />
             <Route path="/*" element={error404} />
           </Routes>
         </AuthProvider>
