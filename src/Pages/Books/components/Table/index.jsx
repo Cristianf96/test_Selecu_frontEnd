@@ -48,7 +48,7 @@ const TableBooks = () => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {dataBooksSearch.map((row) => (
+                        {dataBooksSearch && dataBooksSearch.map((row) => (
                             <TableRow
                                 key={row.id}
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}

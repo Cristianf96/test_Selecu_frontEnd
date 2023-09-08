@@ -42,6 +42,17 @@ const BooksProvider = ({ children }) => {
         setEdit(false)
     }
 
+    const filterSearch = (term) => {
+
+        const filteredBooks = dataBooks.filter(book =>
+            book.title.toLowerCase().includes(term) ||
+            book.author.toLowerCase().includes(term) ||
+            book.publisher.toLowerCase().includes(term)
+        );
+
+        setDataBooksSearch(filteredBooks);
+    }
+
     const createBook = async (newBook) => {
         try {
             const token = localStorage.getItem('token') ?? '';
@@ -104,7 +115,8 @@ const BooksProvider = ({ children }) => {
             edit,
             setEdit,
             openDialogCreate,
-            setOpenDialogCreate
+            setOpenDialogCreate,
+            filterSearch
         }}>
             {children}
         </BooksContext.Provider>
