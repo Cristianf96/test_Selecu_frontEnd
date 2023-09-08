@@ -64,7 +64,7 @@ const AuthProvider = ({ children }) => {
                     window.location.reload()
                 } else {
                     if (!auth) {
-                        navigate('/test_selecu_frontSelecu/Home')
+                        navigate('/test_Selecu_frontEnd/Home')
                     }
                     setAuth(true)
                 }
@@ -72,7 +72,7 @@ const AuthProvider = ({ children }) => {
         } else {
             localStorage.clear()
             setAuth(false)
-            navigate('/test_selecu_frontSelecu')
+            navigate('/test_Selecu_frontEnd')
         }
     }, [auth, login, navigate, tokenExist]);
 

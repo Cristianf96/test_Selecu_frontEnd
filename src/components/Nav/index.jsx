@@ -15,12 +15,12 @@ const NavComponent = (props) => {
         {
             id: useId(),
             title: 'Inicio',
-            navigate: '/test_selecu_frontSelecu/Home'
+            navigate: '/test_Selecu_frontEnd/Home'
         },
         {
             id: useId(),
             title: 'Ver Libros',
-            navigate: '/test_selecu_frontSelecu/Books'
+            navigate: '/test_Selecu_frontEnd/Books'
         }
     ];
     const { window } = props;
