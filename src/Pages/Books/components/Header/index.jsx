@@ -1,13 +1,21 @@
 import { Box, Button, TextField, InputAdornment } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add';
 import SearchIcon from '@mui/icons-material/Search';
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { BooksContext } from '../../Contexts';
 import DialogCreate from './components/DialogCreate';
 
 const HeaderBooks = () => {
 
-    const { setOpenDialogCreate } = useContext(BooksContext)
+    const { filterSearch, setOpenDialogCreate } = useContext(BooksContext);
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const handleSearchChange = (e) => {
+        const term = e.target.value.toLowerCase();
+        setSearchTerm(term);
+
+        filterSearch(term)
+    };
 
     return (
         <Box
@@ -36,6 +44,8 @@ const HeaderBooks = () => {
                             </InputAdornment>
                         ),
                     }}
+                    value={searchTerm}
+                    onChange={handleSearchChange}
                 />
             </Box>
             <Box>
